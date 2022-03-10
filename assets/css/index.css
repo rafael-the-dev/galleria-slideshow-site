@@ -1,10 +1,17 @@
-.header {
+.grid, .header {
   padding-left: 5%;
   padding-right: 5%;
 }
 
-.header__logo-container {
+.header .header__logo-container {
   height: 30px;
+}
+
+.grid .grid__image-container {
+  height: 260px;
+}
+.grid .grid__image-caption {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
 }
 
 /*# sourceMappingURL=index.css.map */
