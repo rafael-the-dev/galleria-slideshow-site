@@ -5,6 +5,14 @@
 
     .grid__image-container {
         height: 260px;
+
+        &--large {
+            height: 380px;
+
+            .grid__image {
+                object-fit: cover;
+            }
+        }
     }
 
     .grid__image-caption {

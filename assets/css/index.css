@@ -10,6 +10,12 @@
 .grid .grid__image-container {
   height: 260px;
 }
+.grid .grid__image-container--large {
+  height: 380px;
+}
+.grid .grid__image-container--large .grid__image {
+  object-fit: cover;
+}
 .grid .grid__image-caption {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
 }
