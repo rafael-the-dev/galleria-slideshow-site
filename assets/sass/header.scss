@@ -1,0 +1,10 @@
+@use  'base';
+
+
+.header {
+    @extend %px;
+
+    .header__logo-container {
+        height: 30px;
+    }
+}
