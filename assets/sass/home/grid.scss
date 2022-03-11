@@ -3,7 +3,7 @@
 .grid {
     @extend %px;
 
-    .grid__image-container {
+    &__item {
         height: 260px;
 
         &--large {
@@ -17,5 +17,19 @@
 
     .grid__image-caption {
         background-image: linear-gradient(to bottom, rgba(0, 0, 0, .0006), rgba(0, 0, 0, .8));
+    }
+
+    @media screen and (min-width: 576px) {
+        &__sub-container {
+            width: 48%;
+        }
+
+        &__item {
+            height: 230px;
+    
+            &--large {
+                height: 400px;
+            }
+        }
     }
 }

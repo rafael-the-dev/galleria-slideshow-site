@@ -7,17 +7,28 @@
   height: 30px;
 }
 
-.grid .grid__image-container {
+.grid__item {
   height: 260px;
 }
-.grid .grid__image-container--large {
+.grid__item--large {
   height: 380px;
 }
-.grid .grid__image-container--large .grid__image {
+.grid__item--large .grid__image {
   object-fit: cover;
 }
 .grid .grid__image-caption {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.0006), rgba(0, 0, 0, 0.8));
+}
+@media screen and (min-width: 576px) {
+  .grid__sub-container {
+    width: 48%;
+  }
+  .grid__item {
+    height: 230px;
+  }
+  .grid__item--large {
+    height: 400px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

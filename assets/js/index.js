@@ -1,4 +1,6 @@
 const gridContainer = document.querySelector('[data-grid]');
+const firstColumn = document.querySelector('[data-sm-column=first]');
+const secondColumn = document.querySelector('[data-sm-column=second]');
 
 const gridItems = [
     {
@@ -9,7 +11,7 @@ const gridItems = [
     },
     {
         author: 'Johannes Vermeer',
-        containerClasses: 'grid__image-container--large',
+        containerClasses: 'grid__item--large',
         title: 'Girl with a Pearl Earring',
         smallImage: '/assets/images/girl-with-pearl-earring/hero-small.jpg',
         largeImage: '/assets/images/girl-with-pearl-earring/hero-large.jpg'
@@ -40,7 +42,7 @@ const gridItems = [
     },
     {
         author: 'Vincent van Gogh',
-        containerClasses: 'grid__image-container--large',
+        containerClasses: 'grid__item--large',
         title: 'Van Gogh self-portrait',
         smallImage: '/assets/images/van-gogh-self-portrait/hero-small.jpg',
         largeImage: '/assets/images/van-gogh-self-portrait/hero-large.jpg'
@@ -53,7 +55,7 @@ const gridItems = [
     },
     {
         author: 'Leonardo da Vinci',
-        containerClasses: 'grid__image-container--large',
+        containerClasses: 'grid__item--large',
         title: 'Lady with an Ermin',
         smallImage: '/assets/images/lady-with-an-ermine/hero-small.jpg',
         largeImage: '/assets/images/lady-with-an-ermine/hero-large.jpg'
@@ -66,7 +68,7 @@ const gridItems = [
     },
     {
         author: 'Paul Cézanne',
-        containerClasses: 'grid__image-container--large',
+        containerClasses: 'grid__item--large',
         title: 'The Basket of Apples',
         smallImage: '/assets/images/the-basket-of-apples/hero-small.jpg',
         largeImage: '/assets/images/the-basket-of-apples/hero-large.jpg'
@@ -85,7 +87,7 @@ const gridItems = [
     },
     {
         author: 'Leonardo da Vinci',
-        containerClasses: 'grid__image-container--large',
+        containerClasses: 'grid__item--large',
         title: 'Mona Lisa',
         smallImage: '/assets/images/mona-lisa/hero-small.jpg',
         largeImage: '/assets/images/mona-lisa/hero-large.jpg'
@@ -101,8 +103,8 @@ const gridItems = [
 const createElement = ({ author, containerClasses, title, smallImage }) => {
     return (
         `
-            <a class="mb-3" href="/">
-                <figure class="grid__image-container position-relative ${containerClasses}">
+            <a class="mb-3 grid__item ${containerClasses} href="/">
+                <figure class="h-100 grid__image-container position-relative">
                     <img
                         class="d-block h-100 w-100 grid__image"
                         src=${smallImage}
@@ -118,49 +120,18 @@ const createElement = ({ author, containerClasses, title, smallImage }) => {
 };
 
 const start = () => {
+    console.log(firstColumn, secondColumn)
     gridContainer.innerHTML = gridItems.reduce(
-            (previousValue, currentValue) => previousValue + createElement(currentValue),
-        "");
-    //
+        (previousValue, currentValue) => previousValue + createElement(currentValue),
+    "");
+
+    firstColumn.innerHTML = gridItems.filter((item, index) => index % 2 === 0).reduce(
+        (previousValue, currentValue) => previousValue + createElement(currentValue),
+    "");
+
+    secondColumn.innerHTML = gridItems.filter((item, index) => index % 2 !== 0).reduce(
+        (previousValue, currentValue) => previousValue + createElement(currentValue),
+    "");
 };
 
 window.addEventListener('load', start);
-
-/**
- * <a class="mb-3" href="/">
-                    <figure class="grid__image-container position-relative">
-                        <img
-                            class="d-block h-100 w-100 grid__image"
-                            src="/assets/images/starry-night/hero-small.jpg"
-                        />
-                        <figcaption class="position-absolute left-0 bottom-0 w-100 pt-5 grid__image-caption px-3">
-                            <h2 class="text-light">Starry Night</h2>
-                            <p class="text-light opacity-75">Vincent Van Gogh</p>
-                        </figcaption>
-                    </figure>
-                </a>
-                <a class="mb-3" href="/">
-                    <figure class="grid__image-container--large position-relative">
-                        <img
-                            class="d-block h-100 w-100 grid__image"
-                            src="/assets/images/girl-with-pearl-earring/hero-small.jpg"
-                        />
-                        <figcaption class="position-absolute left-0 bottom-0 w-100 pt-5 grid__image-caption px-3">
-                            <h2 class="text-light">Girl with a Pearl Earring</h2>
-                            <p class="text-light opacity-75">Johannes Vermeer</p>
-                        </figcaption>
-                    </figure>
-                </a>
-                <a href="/">
-                    <figure class="grid__image-container position-relative">
-                        <img
-                            class="d-block h-100 w-100 grid__image"
-                            src="/assets/images/guernica/hero-small.jpg"
-                        />
-                        <figcaption class="position-absolute left-0 bottom-0 w-100 pt-5 grid__image-caption px-3">
-                            <h2 class="text-light">Guernica</h2>
-                            <p class="text-light opacity-75">Pablo Picasso</p>
-                        </figcaption>
-                    </figure>
-                </a>
- */
