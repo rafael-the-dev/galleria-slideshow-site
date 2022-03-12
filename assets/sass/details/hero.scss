@@ -1,3 +1,5 @@
+@use  "../colors";
+
 .hero {
 
     &__image-container {
@@ -8,6 +10,10 @@
         background-color: #FFF;
         transform: translateY(-30%);
         width: 70%;
+    }
+
+    &__author {
+        @extend %text-dark-grey;
     }
 
     &__avatart-image-container {

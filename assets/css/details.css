@@ -3,6 +3,14 @@
   padding-right: 5%;
 }
 
+.content__description, .content__link, .hero__author {
+  color: #7D7D7D;
+}
+
+.content__title {
+  color: #F3F3F3;
+}
+
 .hero__image-container {
   height: 300px;
 }

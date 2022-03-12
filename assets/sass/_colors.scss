@@ -1,0 +1,13 @@
+$black: #000;
+$dark-grey: #7D7D7D;
+$grey: #E5E5E5;
+$light-grey: #F3F3F3;
+$white: #FFFFFF;
+
+%text-dark-grey {
+    color: $dark-grey;
+}
+
+%text-light-grey {
+    color: $light-grey;
+}
