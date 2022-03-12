@@ -20,4 +20,28 @@
         height: 90px;
         width: 90px;
     }
+
+    @media screen and (min-width: 768px) {
+        &__image-container {
+            height: 500px;
+            width: 70%;
+        }
+
+        &__content {
+            transform: translateY(0);
+            width: 20%;
+        }
+
+        &__sub-content {
+            left: 0;
+            padding: 1.6rem 1.8rem;
+            position: absolute;
+            top: 0;
+        }
+
+        &__avatart-image-container {
+            height: 100px;
+            width: 100px;
+        }
+    }
 }
