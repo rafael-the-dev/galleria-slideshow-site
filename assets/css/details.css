@@ -16,4 +16,14 @@
   width: 90px;
 }
 
+.content {
+  transform: translateY(-10%);
+}
+.content__title {
+  font-size: 7rem;
+  letter-spacing: 0.4rem;
+  transform: translate(0, 22%);
+  z-index: 0;
+}
+
 /*# sourceMappingURL=details.css.map */

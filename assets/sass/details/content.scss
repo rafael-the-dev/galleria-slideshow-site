@@ -1,0 +1,10 @@
+.content {
+    transform: translateY(-10%);
+
+    &__title {
+        font-size: 7rem;
+        letter-spacing: .4rem;
+        transform: translate(0, 22%);
+        z-index: 0;
+    }
+}
