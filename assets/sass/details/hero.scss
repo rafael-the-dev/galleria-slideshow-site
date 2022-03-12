@@ -3,4 +3,15 @@
     &__image-container {
         height: 300px;
     }
+
+    &__content {
+        background-color: #FFF;
+        transform: translateY(-30%);
+        width: 70%;
+    }
+
+    &__avatart-image-container {
+        height: 90px;
+        width: 90px;
+    }
 }
