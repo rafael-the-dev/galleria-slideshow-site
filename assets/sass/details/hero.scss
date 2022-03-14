@@ -1,7 +1,6 @@
 @use  "../colors";
 
 .hero {
-
     &__image-container {
         height: 300px;
     }
@@ -33,15 +32,25 @@
         }
 
         &__sub-content {
+            background-color: #FFF;
             left: 0;
-            padding: 1.6rem 1.8rem;
+            padding: 2rem 1.8rem;
             position: absolute;
+            transform: translate(-50%, 0);
             top: 0;
+            width: 350px;
         }
 
         &__avatart-image-container {
             height: 100px;
             width: 100px;
         }
+    }
+
+    @media screen and (min-width: 922px) {
+       & {
+           padding-top: 0 !important;
+            width: 60%;
+       }
     }
 }

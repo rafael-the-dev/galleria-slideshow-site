@@ -33,14 +33,23 @@
     width: 20%;
   }
   .hero__sub-content {
+    background-color: #FFF;
     left: 0;
-    padding: 1.6rem 1.8rem;
+    padding: 2rem 1.8rem;
     position: absolute;
+    transform: translate(-50%, 0);
     top: 0;
+    width: 350px;
   }
   .hero__avatart-image-container {
     height: 100px;
     width: 100px;
+  }
+}
+@media screen and (min-width: 922px) {
+  .hero {
+    padding-top: 0 !important;
+    width: 60%;
   }
 }
 
@@ -79,6 +88,22 @@
   }
   .content__title {
     font-size: 12rem;
+  }
+}
+@media screen and (min-width: 922px) {
+  .content {
+    margin-top: 0;
+    padding: 0 !important;
+    width: 35%;
+  }
+  .content__title {
+    transform: translate(16%, -60%);
+  }
+}
+
+@media screen and (min-width: 922px) {
+  .main {
+    min-height: 100vh;
   }
 }
 

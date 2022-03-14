@@ -51,4 +51,16 @@
             font-size: 12rem;
         }
     }
+
+    @media screen and (min-width: 922px) {
+        & {
+            margin-top: 0;
+            padding: 0 !important;
+            width: 35%;
+        }
+
+        &__title {
+            transform: translate(16%, -60%);
+        }
+    }
 }
