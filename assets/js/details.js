@@ -23,7 +23,7 @@ const setData = (item) => {
 const fetchData = (id) => {
     fetch('../../data.json')
         .then(res => res.json())
-        .then(data => setData(data.find((item, index) => index === id)))
+        .then(data => setData(data.find((item) => item.id === id)))
         .catch(console.log)
 };
 

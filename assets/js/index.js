@@ -5,6 +5,7 @@ const secondColumn = document.querySelector('[data-sm-column=second]');
 const gridItems = [
     {
         author: 'Vincent Van Gogh',
+        id: 1,
         title: 'Starry Night',
         smallImage: '/assets/images/starry-night/hero-small.jpg',
         largeImage: '/assets/images/starry-night/hero-large.jpg'
@@ -12,18 +13,21 @@ const gridItems = [
     {
         author: 'Johannes Vermeer',
         containerClasses: 'grid__item--large',
+        id: 2,
         title: 'Girl with a Pearl Earring',
         smallImage: '/assets/images/girl-with-pearl-earring/hero-small.jpg',
         largeImage: '/assets/images/girl-with-pearl-earring/hero-large.jpg'
     },
     {
         author: 'Pablo Picass',
+        id: 3,
         title: 'Guernica',
         smallImage: '/assets/images/guernica/hero-small.jpg',
         largeImage: '/assets/images/guernica/hero-large.jpg'
     },
     {
         author: 'Artemisia Gentileschi',
+        id: 4,
         title: 'Penitent Magdalenet',
         smallImage: '/assets/images/penitent-magdalene/hero-small.jpg',
         largeImage: '/assets/images/penitent-magdalene/hero-large.jpg'
@@ -100,18 +104,18 @@ const gridItems = [
     },
 ];
 
-const createElement = ({ author, containerClasses, title, smallImage }) => {
+const createElement = ({ artist, containerClasses, id, images, name }) => {
     return (
         `
-            <a class="mb-3 grid__item ${containerClasses} href="/">
+            <a class="mb-3 grid__item ${containerClasses}" href="/details.html?${id}">
                 <figure class="h-100 grid__image-container position-relative">
                     <img
                         class="d-block h-100 w-100 grid__image"
-                        src=${smallImage}
+                        src=${images.hero.small}
                     />
                     <figcaption class="position-absolute left-0 bottom-0 w-100 pt-3 grid__image-caption px-3">
-                        <h2 class="text-light">${ title }</h2>
-                        <p class="text-light opacity-75">${ author }</p>
+                        <h2 class="text-light">${ name }</h2>
+                        <p class="text-light opacity-75">${ artist.name }</p>
                     </figcaption>
                 </figure>
             </a>
@@ -120,18 +124,22 @@ const createElement = ({ author, containerClasses, title, smallImage }) => {
 };
 
 const start = () => {
-    console.log(firstColumn, secondColumn)
-    gridContainer.innerHTML = gridItems.reduce(
-        (previousValue, currentValue) => previousValue + createElement(currentValue),
-    "");
-
-    firstColumn.innerHTML = gridItems.filter((item, index) => index % 2 === 0).reduce(
-        (previousValue, currentValue) => previousValue + createElement(currentValue),
-    "");
-
-    secondColumn.innerHTML = gridItems.filter((item, index) => index % 2 !== 0).reduce(
-        (previousValue, currentValue) => previousValue + createElement(currentValue),
-    "");
+    fetch('../../data.json')
+        .then(res => res.json())
+        .then(data => {
+            gridContainer.innerHTML = data.reduce(
+                (previousValue, currentValue) => previousValue + createElement(currentValue),
+            "");
+        
+            firstColumn.innerHTML = data.filter((item, index) => index % 2 === 0).reduce(
+                (previousValue, currentValue) => previousValue + createElement(currentValue),
+            "");
+        
+            secondColumn.innerHTML = data.filter((item, index) => index % 2 !== 0).reduce(
+                (previousValue, currentValue) => previousValue + createElement(currentValue),
+            "");
+        })
+        .catch(console.log)
 };
 
 window.addEventListener('load', start);
