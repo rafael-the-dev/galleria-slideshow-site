@@ -5,3 +5,17 @@
     background-color: #000;
     opacity: .95;
 }
+
+.open-modal-button {
+    opacity: .9;
+    transform: translate(20px, 20px);
+
+    &__icon {
+        background-image: url(../images/shared/icon-view-image.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 15px;
+        margin-right: .7rem;
+        width: 15px;
+    }
+}

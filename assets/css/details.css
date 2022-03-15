@@ -107,7 +107,20 @@
 
 .image-modal {
   background-color: #000;
-  opacity: 0.93;
+  opacity: 0.95;
+}
+
+.open-modal-button {
+  opacity: 0.9;
+  transform: translate(20px, 20px);
+}
+.open-modal-button__icon {
+  background-image: url(../images/shared/icon-view-image.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 15px;
+  margin-right: 0.7rem;
+  width: 15px;
 }
 
 @media screen and (min-width: 922px) {
