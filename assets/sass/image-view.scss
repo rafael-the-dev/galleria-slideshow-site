@@ -1,0 +1,7 @@
+@use "base";
+
+.image-modal {
+    @extend %px;
+    background-color: #000;
+    opacity: .95;
+}

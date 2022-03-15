@@ -1,6 +1,7 @@
 @use  '../base';
 @use  'hero';
 @use  'content';
+@use  "../image-view"; 
 
 .main {
     @extend %px;

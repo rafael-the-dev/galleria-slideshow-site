@@ -1,4 +1,4 @@
-.main, .header {
+.main, .image-modal, .header {
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -103,6 +103,11 @@
   .content__title {
     transform: translate(16%, -60%);
   }
+}
+
+.image-modal {
+  background-color: #000;
+  opacity: 0.93;
 }
 
 @media screen and (min-width: 922px) {
