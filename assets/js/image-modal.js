@@ -1,16 +1,19 @@
 let modal = null;
 let closeButton = null;
+let openButton = null;
 
-const closeHandler = () => {
-    modal.classList.remove('d-flex');
-    modal.classList.add('d-none');
+const closeHandler = ({ addClass, removeClass }) => () => {
+    modal.classList.remove(removeClass);
+    modal.classList.add(addClass);
 };
 
 const modalStart = () => {
     modal = document.querySelector('[data-modal=image]');
-    closeButton = document.querySelector('[data-close]');
+    closeButton = document.querySelector('[data-button=close-modal]');
+    openButton = document.querySelector('[data-button=open-modal]');
 
-    closeButton.addEventListener('click', closeHandler);
+    closeButton.addEventListener('click', closeHandler({ addClass: 'd-none', removeClass: 'd-flex'}));
+    openButton.addEventListener('click', closeHandler({ removeClass: 'd-none', addClass: 'd-flex'}));
 };
 
 window.addEventListener('load', modalStart);
